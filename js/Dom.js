@@ -70,10 +70,38 @@
 /*
    -----------InnerHTML vs OuterHTML Property-------------
  */
-var heading = document.querySelector('.box');
-// use InnerHTml
-heading.innerHTML = '<h1>thang1234</h1>';
+// var heading = document.querySelector('.box');
+// // use InnerHTml
+// heading.innerHTML = '<h1>thang1234</h1>';
 
-var headings = document.querySelector('h1');
-//use getter
-console.log(heading.innerText);
+// var headings = document.querySelector('h1');
+// //use getter
+// console.log(heading.innerText);
+
+// ======================================================
+/*
+  ------------Node properties----------------------
+*/
+
+
+// ======================================================
+/*
+  -----------------------DOM CSS-------------------------
+*/
+var add = document.querySelector('.box');
+// ========= Cách 1 =======
+// DOM CSS
+// use properties 
+add.style.width = '200px'; 
+add.style.height = '100px'; 
+add.style.backgroundColor = 'red'; 
+// ========= Cách 2 =======
+// add.style Object
+// assign (là gán)
+Object.assign(add.style, {
+   width: '200px', 
+   height: '100px', 
+   backgroundColor: 'green'
+}
+)
+console.log(add.style.width);
