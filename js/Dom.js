@@ -44,18 +44,36 @@
 /*
    --------DOM attribute---------
  */
-var headingElement = document.querySelector('h1');
+//  var headingElement = document.querySelector('h1');
 // use properties 
-headingElement.id('bottom');
-alert.headingElement('id');
+//  headingElement.id('bottom');
+// alert.headingElement('id');
 // use method setAttribute 
-headingElement.setAttribute('class','top');
-headingElement.setAttribute('title','top');
-console.log(headingElement.getAttribute('class'));
-console.log(headingElement.getAttribute('title'));
+// headingElement.setAttribute('class','top');
+// headingElement.setAttribute('title','top');
+// console.log(headingElement.getAttribute('class'));
+// console.log(headingElement.getAttribute('title'));
 
 // =======================================================
 /* 
-   ------------------InnerText vs textContent Property---------
-
+   ------------------InnerText vs textContent Property--------
  */
+// var heading = document.querySelector('h1');
+// heading.setAttribute('class', 'name');
+// use getter
+// console.log(heading.innerText);
+// use setter
+// Change the properties in 1 subject
+// heading.innerText  = 'New heading';
+
+// =======================================================
+/*
+   -----------InnerHTML vs OuterHTML Property-------------
+ */
+var heading = document.querySelector('.box');
+// use InnerHTml
+heading.innerHTML = '<h1>thang1234</h1>';
+
+var headings = document.querySelector('h1');
+//use getter
+console.log(heading.innerText);
