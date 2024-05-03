@@ -114,13 +114,30 @@
    // remove // xóa đi các phần tử trong class 
    // toggle  // Nếu có class rồi thì phương thức toggle sẽ kiểm tra và xóa nó đi và ngược lại
 */
-var add = document.querySelector('.box');
-// add.classList.add('heading');
-// console.log(add.classList.add)
+// var add = document.querySelector('.box');
+// // add.classList.add('heading');
+// // console.log(add.classList.add)
 
-setTimeout (() => {
-   add.classList.toggle('heading');
-}, 1000);
+// setTimeout (() => {
+//    add.classList.toggle('heading');
+// }, 1000);
 
 
+//========================================================
+/*
+ ----------------------DOM events--------------------------
+ // 1. Attribute events
+ // 2. Assign event using the element node
+*/
 
+var add = document.querySelectorAll('h1');
+for(var i = 0; i < add.length; ++i){
+  // function () hàm callback gọi lại onclick
+     add[i].onclick = function(e){
+       console.log(add.length);
+     }
+}
+//Node: Lí do vì sao không console.log(add[i]) mà phải sử dụng event và thuộc tính target.
+// bởi vì: nếu tá console.log(add[i]) thì sẽ giống như ta đang console.log(add.length)
+// tức là sự kiện onclick đã xẩy tra trc khi console.log , khi đó biến i(index) sẽ tăng lên thêm 1
+// sẽ vượt quá giới hạn độ dài vòng for. vì vậy kq trả về undefined
