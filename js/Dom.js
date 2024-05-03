@@ -189,32 +189,56 @@
 // var link = document.querySelectorAll('a');
 // truong hop 2
 // ======= Ví dự 1 sự cho trg hợp hủy đi sự kiện mặc định cảu trình duyệt lên thẻ a
-var link = document.links;
-for(var i = 0; i<link.length ; ++i){
-    link[i].onclick = function(e){
-      //startsWith bên Es6
-      if(!e.target.href.startsWith('https://fullstack.edu.vn/learning/javascript-co-ban?id=6dd78909-0225-4d57-bee7-20bec5d89773')){
-        // preventDefault sẽ hủy đi các sự kiện mặc định của trình duyệt 
-        e.preventDefault(); 
-      }
-    }
+// var link = document.links;
+// for(var i = 0; i<link.length ; ++i){
+//     link[i].onclick = function(e){
+//       //startsWith bên Es6
+//       if(!e.target.href.startsWith('https://fullstack.edu.vn/learning/javascript-co-ban?id=6dd78909-0225-4d57-bee7-20bec5d89773')){
+//         // preventDefault sẽ hủy đi các sự kiện mặc định của trình duyệt 
+//         e.preventDefault(); 
+//       }
+//     }
+// }
+// // ====== Ví dự 2 hủy đi sự kiện mặc định của onmousedown khi kích xuống
+// var  add = document.querySelector('ul');
+// add.onmousedown = function(e){
+//   // sử dung phương thức preventDefault() để hủy đi các sự kiện mặc định 
+//   e.preventDefault();
+// }
+// add.onclick = function(e){
+//   console.log(e.target);
+// }
+// //===== Ví dự Hủy Nổi Bọt 
+// var div = document.querySelector('div');
+// div.onclick = function(){
+//   console.log('Div');
+// }
+// var button = document.querySelector('button');
+// button.onclick = function(e){
+//     e.stopPropagation();
+//     console.log('Click Me');
+// }
+// // Note : PreventDefault Hủy bỏ đi các sự kiện mặc định của trình duyêt Vd Như khi ấn và href sẽ chuyển qua trang khác hoặc hủy khi onmousedown khi kích chuột xuống 
+// //       stopPropagation hủy đi sư kiện nổi bọt khi kích vào thẻ con trong 1 thẻ cha 
+
+//================================================================================================
+/*
+----------------------------------Event listener----------------------------------------
+*/
+function thang(){
+  console.log('viec 1');
 }
-// ====== Ví dự 2 hủy đi sự kiện mặc định của onmousedown khi kích xuống
-var  add = document.querySelector('ul');
-add.onmousedown = function(e){
-  // sử dung phương thức preventDefault() để hủy đi các sự kiện mặc định 
-  e.preventDefault();
+function thang1(){
+  console.log('viec 2');
 }
-add.onclick = function(e){
-  console.log(e.target);
-}
-//===== Ví dự Hủy Nổi Bọt 
-var div = document.querySelector('div');
-div.onclick = function(){
-  console.log('Div');
-}
-var button = document.querySelector('button');
-button.onclick = function(e){
-    e.stopPropagation();
-    console.log('Click Me');
-}
+var btn  = document.getElementById('btn');
+btn.addEventListener('click', thang);
+btn.addEventListener('click', thang1);
+setTimeout(function()  {
+  btn.removeEventListener('click', thang);
+}, 5000);
+// Note: addEventListener sẽ nhận vào 2 đối số là 'click' và đối số của hàm callback
+//       removeEventListener sẽ xóa bỏ đi 2 đối số được chuyền vào 'click' và đối số của hàm callback
+
+
+
