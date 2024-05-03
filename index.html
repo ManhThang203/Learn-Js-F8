@@ -11,6 +11,12 @@
     .top{
     color: blue;
     }
+    ul{
+        display: none;
+    }
+    input:focus ~ ul{
+        display: block;
+    }
 </style>
 </head>
 <body>
@@ -50,14 +56,31 @@
         <h1>Dom Event 3</h1> -->
     <!-- </div> -->
     <!-- ========================= -->
-    <input type="text">
+    <!-- <input type="text">
     <input type="checkbox">
 
     <select name="" id="">
         <option value="1">HTML</option>
         <option value="2">CSS</option>
         <option value="3">PHP</option>
-    </select>
+    </select> -->
+    <!-- ======================== -->
+    <a href="https://fullstack.edu.vn/learning/javascript-co-ban?id=6dd78909-0225-4d57-bee7-20bec5d89773">Học lập trình</a>
+    <br>
+    <a href="https://www.google.com/search?q=gg&oq=gg&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIMCAAQIxgnGIAEGIoFMgYIARBFGDsyBggCEEUYQDIICAMQRRgnGDsyDAgEEAAYQxiABBiKBTIMCAUQABhDGIAEGIoFMgcIBhAAGIAEMgwIBxAAGEMYgAQYigXSAQkyMjY5ajBqMTWoAgmwAgE&sourceid=chrome&ie=UTF-8">Tìm Kiếm</a>
+    <br>
+    <input placeholder="Tìm kiếm">
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>PHP</li>
+    </ul>
+    <div>
+        div
+        <br>
+        <br>
+        <button>Click Me!</button>
+    </div>
     <script src="./js/Dom.js"></script>
 </body>
 </html>
