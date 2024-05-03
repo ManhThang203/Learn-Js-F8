@@ -130,14 +130,51 @@
  // 2. Assign event using the element node
 */
 
-var add = document.querySelectorAll('h1');
-for(var i = 0; i < add.length; ++i){
-  // function () hàm callback gọi lại onclick
-     add[i].onclick = function(e){
-       console.log(add.length);
-     }
-}
+// var add = document.querySelectorAll('h1');
+// for(var i = 0; i < add.length; ++i){
+//   // function () hàm callback gọi lại onclick
+//      add[i].onclick = function(e){
+//        console.log(add.length);
+//      }
+// }
 //Node: Lí do vì sao không console.log(add[i]) mà phải sử dụng event và thuộc tính target.
 // bởi vì: nếu tá console.log(add[i]) thì sẽ giống như ta đang console.log(add.length)
 // tức là sự kiện onclick đã xẩy tra trc khi console.log , khi đó biến i(index) sẽ tăng lên thêm 1
 // sẽ vượt quá giới hạn độ dài vòng for. vì vậy kq trả về undefined
+
+//==========================================================
+/*
+-------------------DOM events example----------------------
+// 1. Input / select
+// 2. Key up / down
+*/
+// Note : oninput sẽ trả về luôn 
+//        onchange sẽ trả về khi nhấn ra ngoài 
+//        key up là khi nhấn bàn phím xuống và thả lên thì sẽ nhận
+//        key dow là khi nhấn chuột xuống sẽ nhân
+//        key press là khi nhấn
+var inputelement = document.querySelector('input[type="text"]');
+//  function(e) sử dụng mouse event 
+inputelement.oninput = function(e){
+      // e.target : từ mouse event. target sẽ lấy ra element node
+      // e.target.value lấy ra giá trị của thẻ input
+      console.log(e.target.value);
+    }
+    
+    inputelement.onkeyup = function(e){
+      console.log(e.which);
+      switch(e.which){
+        case 27:
+          console.log('Exit');
+          break;
+      }
+}
+
+var checkelment = document.querySelector('input[type="checkbox"]');
+checkelment.onchange = function(e){
+  console.log(e.target.checked);
+}
+var selectelement = document.querySelector('select');
+selectelement.onchange = function(e){
+   console.log(e.target.value);
+}
