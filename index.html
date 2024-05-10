@@ -11,9 +11,7 @@
     .top{
     color: blue;
     }
-    ul{
-        display: none;
-    }
+   
     input:focus ~ ul{
         display: block;
     }
@@ -84,10 +82,22 @@
     <!-- <button id="btn">CLick Me!</button> -->
 
     <!-- =================================== -->
-    <h2>Danh sách khóa học</h2>
-    <ul id="list-courses">
-        
+    <h2>DANH SÁCH KHÓA HỌC</h2>
+    <ul id="item-courses">
+
     </ul>
+    <div>
+        <label style="margin-right: 15px;">Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label style="margin-top: 20px; display: inline-block;">Descript</label>
+        <input type="text" name="descript">
+    </div>
+    <div style="margin-top: 20px; margin-left: 70px;">
+        <button id="creatbtn">Submit</button>
+        <button id="saveBtn">Save</button>
+    </div>
     <script src="./js/Api.js"></script>
 </body>
 </html>
